@@ -16,23 +16,30 @@ function CandidateList() {
       }
     };
     fetchCandidates();
-  }, []); 
+  }, [listOfCandidates]);
 
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:8080/candidates/${id}`);
+      const response = await axios.delete(
+        `http://localhost:8080/candidates/${id}`
+      );
       console.log(response);
-      {/**setListOfCandidates function takes oldCandidates, as an argument,
-        which is a function which takes the current state and returns a new state */}
-      setListOfCandidates(oldCandidates => oldCandidates.filter(candidate => candidate.id !== id));
-    } catch(error) {
-      console.error('Error deleting candidate', error);
+      {
+        /**setListOfCandidates function takes oldCandidates, as an argument,
+        which is a function which takes the current state and returns a new state */
+      }
+      setListOfCandidates((oldCandidates) =>
+        oldCandidates.filter((candidate) => candidate.id !== id)
+      );
+    } catch (error) {
+      console.error("Error deleting candidate", error);
     }
-  }
+  };
 
   return (
     <div>
-      <div className="d-flex justify-content-end m-3">
+      <h1 className="mt-5 mx-5 ">Candidate List</h1>
+      <div className="d-flex justify-content-end me-5">
         <Modal />
       </div>
       <table className="table table-hover mt-5 mx-5">
@@ -60,9 +67,25 @@ function CandidateList() {
                 <td>{candidate.skills}</td>
                 <td>{candidate.location}</td>
                 <td>
-                <Link to={`/details/${candidate.id}`} className="btn btn-dark me-1">View</Link>
-                <Link to={`/update/${candidate.id}`} className="btn btn-dark me-1">Update</Link>
-                <button onClick={() => handleDelete(candidate.id)} type="button" className="btn btn-danger">Delete</button>
+                  <Link
+                    to={`/candidate/details/${candidate.id}`}
+                    className="btn btn-dark me-1"
+                  >
+                    View
+                  </Link>
+                  <Link
+                    to={`/candidate/update/${candidate.id}`}
+                    className="btn btn-dark me-1"
+                  >
+                    Update
+                  </Link>
+                  <button
+                    onClick={() => handleDelete(candidate.id)}
+                    type="button"
+                    className="btn btn-danger"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             </tbody>

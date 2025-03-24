@@ -25,7 +25,7 @@ function CandidateDetail() {
   return (
     <div>
     <div className="d-flex justify-content-end m-3">
-        <Link to={`/update/${candidate.id}`} className="btn btn-dark me-1">Update</Link>
+        <Link to={`/candidate/details/${candidate.id}`} className="btn btn-dark me-1">Update</Link>
         <Link to={'/'} className="btn btn-dark me-1">Home</Link>
         </div>
     <div className="row justify-content-center mt-5">

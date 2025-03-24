@@ -36,7 +36,7 @@ function UpdateCandidate() {
         values
       );
       console.log(response);
-      navigate("/");
+      navigate("/candidates");
     } catch (error) {
       console.error("Error updating candidate:", error);
     }
@@ -111,7 +111,7 @@ function UpdateCandidate() {
           </form>
         </div>
         <div className="d-flex justify-content-end">
-        <Link to={`/`} className="btn btn-secondary me-1">Close</Link>
+        <Link to={`/candidates`} className="btn btn-secondary me-1">Close</Link>
           <button onClick={handleClick} type="button" className="btn btn-dark">
             Update Candidate
           </button>

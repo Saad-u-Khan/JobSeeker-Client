@@ -5,7 +5,6 @@ import axios from "axios";
 function Modal() {
 
   const [values, setValues] = useState([]);
-    
   const [modal, setModal] = useState(false);
 
   const openModal = () => setModal(true);
@@ -17,7 +16,6 @@ function Modal() {
       const response = await axios.post('http://localhost:8080/candidates', values);
       console.log(response);
       closeModal();
-      location.reload();
     } catch (error) {
       console.error("Error adding candidate:", error);
     }

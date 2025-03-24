@@ -39,3 +39,40 @@ body {
   right: 0;
   background-color: rgba(189, 189, 189, 0.9);
 }
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: .75rem;
+}
+
+.image-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.form-container {
+  background-image: url(./images/gradient.jpg);
+  background-size: cover;
+  background-position: center;
+  margin-top: 150px;
+  width: 400px;
+  height: 400px;
+  margin-left: 450px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-input {
+  width: 300px !important;
+}
+
+.accordion-button::after {
+  display: none; /* Hides the arrow */
+}
+
+.accordion-button:focus {
+  outline: none !important;  /* Removes the button outline */
+  box-shadow: none !important;  
+}
+
